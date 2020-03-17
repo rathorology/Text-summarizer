@@ -19,6 +19,8 @@ import pandas as pd
 
 
 # Use it for json
+
+
 # filename = "/home/rathorology/PycharmProjects/Text-summarizer/capterra/capterra_products.json"
 # import ijson
 #
@@ -44,6 +46,9 @@ import pandas as pd
 import gensim
 from nltk import RegexpTokenizer
 from nltk.corpus import stopwords
+from gensim.summarization import keywords
+from gensim.summarization import summarize
+import numpy as np
 
 df = pd.read_csv("capterra/reviews.csv")
 df = df[['globalReviewId', 'productName', 'prosText', 'generalComments', 'consText']]
@@ -51,14 +56,10 @@ df = df[['globalReviewId', 'productName', 'prosText', 'generalComments', 'consTe
 df["review"] = df["generalComments"] + " " + df["prosText"] + " " + df["consText"]
 df = df.drop(['prosText', 'generalComments', 'consText'], axis=1)
 df = df.dropna(axis=0)
-
-txt_data = list(df['review'])
-
-
-# print(txt_data)
+df = df.iloc[:300]
 
 
-def _clean_sent_words(sent):
+def clean_sent_words(sent):
     sent = str(sent).lower()
     sent = RegexpTokenizer(r'\w+').tokenize(sent)
     stop = set(stopwords.words('english'))
@@ -66,26 +67,41 @@ def _clean_sent_words(sent):
     return sent_words
 
 
-class LabeledLineSentence(object):
+# clean_review = list()
+# for i in df['review'].tolist():
+#     clean_review.append(clean_sent_words(i))
+# df['clean_review'] = clean_review
 
-    def __init__(self, doc_list, labels_list):
-        self.labels_list = labels_list
-        self.doc_list = doc_list
+summary_list = list()
+keyword_list = list()
+for i in df['review'].tolist():
+    keyword = keywords(i)
+    keyword_list.append(keyword)
 
-    def __iter__(self):
-        for idx, doc in enumerate(self.doc_list):
-            print(idx, doc)
-            print('====================================================================')
-            yield gensim.models.doc2vec.LabeledSentence(doc,
-                                                        [self.labels_list[idx]])
+    # print('=================Keyword===============')
+    # print(keyword)
+    # print('=========================================')
+
+    try:
+        sum = summarize(i)
+        summary_list.append(sum)
+    except Exception as e:
+        summary_list.append(np.NaN)
+        print('nan')
+    # print('===================Original Review=================================')
+    # print(df['review'][1])
+    # print('==============================================================================================================')
+    # print('=================Summary==========================================')
+    # print(sum)
+df['keyword'] = keyword_list
+df['summary'] = summary_list
+df = df.dropna(axis=0)
+df.to_csv('sample_reviews_summary.csv',index=False)
 
 
-print('txt_data = ', len(txt_data))
-txt_data = _clean_sent_words(txt_data)
-print('txt_data = ', len(txt_data))
-# it = LabeledLineSentence(txt_data, txt_labels)
-
-
-# # Prepare and Train Model
-# model = gensim.models.Doc2Vec(size=300, min_count=0, alpha=0.025, min_alpha=0.025)
-# model.build_vocab(it)
+df = pd.read_csv("sample_reviews_summary.csv")
+print(df.isnull().sum())
+df= df.dropna(axis=0)
+df.to_csv('sample_reviews_summary.csv',index=False)
+df = pd.read_csv("sample_reviews_summary.csv")
+print(df.isnull().sum())
