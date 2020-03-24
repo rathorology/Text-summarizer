@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="caffbe3f-3bc6-425f-adc8-7a2b47e1010f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/summarizer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bert_working.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nidhi.py" beforeDir="false" afterPath="$PROJECT_DIR$/nidhi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bert_summarizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/bert_summarizer.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,9 +31,51 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.summarizer">
+  <component name="RunManager" selected="Python.bert_summarizer">
+    <configuration name="bert_summarizer" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Text-summarizer" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/bert_summarizer.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="bert_working" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Text-summarizer" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/bert_working.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="nidhi" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Text-summarizer" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -47,27 +89,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/nidhi.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="summarizer" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Text-summarizer" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/summarizer.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -99,7 +120,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.summarizer" />
+        <item itemvalue="Python.bert_summarizer" />
+        <item itemvalue="Python.bert_working" />
         <item itemvalue="Python.nidhi" />
         <item itemvalue="Python.summary (1)" />
       </list>
@@ -123,63 +145,63 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="693" y="286" width="524" height="551" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1583902085369" />
-    <state x="341" y="178" width="659" height="902" key="#xdebugger.evaluate" timestamp="1584909106364">
+    <state x="348" y="178" width="1572" height="902" key="#xdebugger.evaluate" timestamp="1585048000978">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="341" y="178" width="659" height="902" key="#xdebugger.evaluate/0.27.1920.1053@0.27.1920.1053" timestamp="1584909106364" />
+    <state x="348" y="178" width="1572" height="902" key="#xdebugger.evaluate/0.27.1920.1053@0.27.1920.1053" timestamp="1585048000978" />
     <state x="260" y="740" key="#xdebugger.evaluate/0.27.3000.2133@0.27.3000.2133" timestamp="1584548850139" />
     <state width="792" height="867" key="DebuggerActiveHint" timestamp="1584810916225">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state width="792" height="867" key="DebuggerActiveHint/0.27.1920.1053@0.27.1920.1053" timestamp="1584810916225" />
-    <state width="1881" height="266" key="GridCell.Tab.0.bottom" timestamp="1584909982333">
+    <state width="1881" height="231" key="GridCell.Tab.0.bottom" timestamp="1585048735006">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1881" height="266" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1584909982333" />
+    <state width="1881" height="231" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1585048735006" />
     <state width="1881" height="420" key="GridCell.Tab.0.bottom/0.27.3000.2133@0.27.3000.2133" timestamp="1584548865334" />
-    <state width="1881" height="266" key="GridCell.Tab.0.center" timestamp="1584909982332">
+    <state width="1881" height="231" key="GridCell.Tab.0.center" timestamp="1585048735005">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1881" height="266" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1584909982332" />
+    <state width="1881" height="231" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1585048735005" />
     <state width="1881" height="420" key="GridCell.Tab.0.center/0.27.3000.2133@0.27.3000.2133" timestamp="1584548865334" />
-    <state width="1881" height="266" key="GridCell.Tab.0.left" timestamp="1584909982332">
+    <state width="1881" height="231" key="GridCell.Tab.0.left" timestamp="1585048735005">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1881" height="266" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1584909982332" />
+    <state width="1881" height="231" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1585048735005" />
     <state width="1881" height="420" key="GridCell.Tab.0.left/0.27.3000.2133@0.27.3000.2133" timestamp="1584548865333" />
-    <state width="1881" height="266" key="GridCell.Tab.0.right" timestamp="1584909982332">
+    <state width="1881" height="231" key="GridCell.Tab.0.right" timestamp="1585048735005">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1881" height="266" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1584909982332" />
+    <state width="1881" height="231" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1585048735005" />
     <state width="1881" height="420" key="GridCell.Tab.0.right/0.27.3000.2133@0.27.3000.2133" timestamp="1584548865334" />
-    <state width="1881" height="266" key="GridCell.Tab.1.bottom" timestamp="1584909982333">
+    <state width="1881" height="384" key="GridCell.Tab.1.bottom" timestamp="1585048044602">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1881" height="266" key="GridCell.Tab.1.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1584909982333" />
+    <state width="1881" height="384" key="GridCell.Tab.1.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1585048044602" />
     <state width="1881" height="420" key="GridCell.Tab.1.bottom/0.27.3000.2133@0.27.3000.2133" timestamp="1584548865334" />
-    <state width="1881" height="266" key="GridCell.Tab.1.center" timestamp="1584909982333">
+    <state width="1881" height="384" key="GridCell.Tab.1.center" timestamp="1585048044602">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1881" height="266" key="GridCell.Tab.1.center/0.27.1920.1053@0.27.1920.1053" timestamp="1584909982333" />
+    <state width="1881" height="384" key="GridCell.Tab.1.center/0.27.1920.1053@0.27.1920.1053" timestamp="1585048044602" />
     <state width="1881" height="420" key="GridCell.Tab.1.center/0.27.3000.2133@0.27.3000.2133" timestamp="1584548865334" />
-    <state width="1881" height="266" key="GridCell.Tab.1.left" timestamp="1584909982333">
+    <state width="1881" height="384" key="GridCell.Tab.1.left" timestamp="1585048044602">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1881" height="266" key="GridCell.Tab.1.left/0.27.1920.1053@0.27.1920.1053" timestamp="1584909982333" />
+    <state width="1881" height="384" key="GridCell.Tab.1.left/0.27.1920.1053@0.27.1920.1053" timestamp="1585048044602" />
     <state width="1881" height="420" key="GridCell.Tab.1.left/0.27.3000.2133@0.27.3000.2133" timestamp="1584548865334" />
-    <state width="1881" height="266" key="GridCell.Tab.1.right" timestamp="1584909982333">
+    <state width="1881" height="384" key="GridCell.Tab.1.right" timestamp="1585048044602">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1881" height="266" key="GridCell.Tab.1.right/0.27.1920.1053@0.27.1920.1053" timestamp="1584909982333" />
+    <state width="1881" height="384" key="GridCell.Tab.1.right/0.27.1920.1053@0.27.1920.1053" timestamp="1585048044602" />
     <state width="1881" height="420" key="GridCell.Tab.1.right/0.27.3000.2133@0.27.3000.2133" timestamp="1584548865334" />
-    <state x="426" y="182" width="1057" height="760" key="SettingsEditor" timestamp="1583929821979">
+    <state x="426" y="182" width="1057" height="760" key="SettingsEditor" timestamp="1585030554051">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="426" y="182" width="1057" height="760" key="SettingsEditor/0.27.1920.1053@0.27.1920.1053" timestamp="1583929821979" />
-    <state width="960" height="526" key="XDebugger.FullValuePopup" timestamp="1584907939666">
+    <state x="426" y="182" width="1057" height="760" key="SettingsEditor/0.27.1920.1053@0.27.1920.1053" timestamp="1585030554051" />
+    <state width="960" height="526" key="XDebugger.FullValuePopup" timestamp="1585047627888">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="960" height="526" key="XDebugger.FullValuePopup/0.27.1920.1053@0.27.1920.1053" timestamp="1584907939666" />
+    <state width="960" height="526" key="XDebugger.FullValuePopup/0.27.1920.1053@0.27.1920.1053" timestamp="1585047627888" />
     <state x="674" y="394" width="571" height="352" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1580751431966">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
@@ -209,14 +231,14 @@
           <option name="timeStamp" value="40" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/summarizer.py</url>
-          <line>15</line>
-          <option name="timeStamp" value="43" />
+          <url>file://$PROJECT_DIR$/bert_summarizer.py</url>
+          <line>112</line>
+          <option name="timeStamp" value="50" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/summarizer.py</url>
-          <line>14</line>
-          <option name="timeStamp" value="47" />
+          <url>file://$PROJECT_DIR$/bert_summarizer.py</url>
+          <line>110</line>
+          <option name="timeStamp" value="63" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
