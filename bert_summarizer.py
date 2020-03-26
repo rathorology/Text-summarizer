@@ -27,7 +27,7 @@ FullTokenizer = bert.bert_tokenization.FullTokenizer
 from tensorflow.keras.models import Model  # Keras is the new high level API for TensorFlow
 import math
 
-max_seq_length = 200  # Your choice here.
+max_seq_length = 300  # Your choice here.
 input_word_ids = tf.keras.layers.Input(shape=(max_seq_length,), dtype=tf.int32,
                                        name="input_word_ids")
 input_mask = tf.keras.layers.Input(shape=(max_seq_length,), dtype=tf.int32,
@@ -73,41 +73,52 @@ do_lower_case = bert_layer.resolved_object.do_lower_case.numpy()
 tokenizer = FullTokenizer(vocab_file, do_lower_case)
 
 df = pd.read_csv("/home/rathorology/PycharmProjects/Text-summarizer/finanical_risk_management.csv")
-dummy_sentance = df['review'][0]
-
-stokens = tokenizer.tokenize(dummy_sentance)
-stokens = ["[CLS]"] + stokens + ["[SEP]"]
-
-input_ids = get_ids(stokens, tokenizer, max_seq_length)
-input_masks = get_masks(stokens, max_seq_length)
-input_segments = get_segments(stokens, max_seq_length)
-input_ids = np.array(input_ids)
-input_masks = np.array(input_masks)
-input_segments = np.array(input_segments)
-pool_embs, all_embs = model.predict([[input_ids], [input_masks], [input_segments]])
-
-
-def square_rooted(x):
-    return math.sqrt(sum([a * a for a in x]))
-
-
-def cosine_similarity(x, y):
-    numerator = sum(a * b for a, b in zip(x, y))
-    denominator = square_rooted(x) * square_rooted(y)
-    return numerator / float(denominator)
-
+feature_list = list()
 
 for dummy_feature in ast.literal_eval(df['Features'][0]):
-    f_stokens = tokenizer.tokenize(dummy_feature)
-    feat_stokens = ["[CLS]"] + f_stokens + ["[SEP]"]
+    feature_list.append(dummy_feature)
+for i in feature_list:
+    df[i] = ""
+for index, row in df.iterrows():
 
-    f_input_ids = get_ids(feat_stokens, tokenizer, max_seq_length)
-    f_input_masks = get_masks(feat_stokens, max_seq_length)
-    f_input_segments = get_segments(feat_stokens, max_seq_length)
+    dummy_sentance = row['review']
 
-    f_input_ids = np.array(f_input_ids)
-    f_input_masks = np.array(f_input_masks)
-    f_input_segments = np.array(f_input_segments)
-    f_pool_embs, f_all_embs = model.predict([[f_input_ids], [f_input_masks], [f_input_segments]])
+    stokens = tokenizer.tokenize(dummy_sentance)
+    stokens = ["[CLS]"] + stokens + ["[SEP]"]
 
-    print(str(dummy_feature), cosine_similarity(all_embs[0][0], f_all_embs[0][0]))
+    input_ids = get_ids(stokens, tokenizer, max_seq_length)
+    input_masks = get_masks(stokens, max_seq_length)
+    input_segments = get_segments(stokens, max_seq_length)
+    input_ids = np.array(input_ids)
+    input_masks = np.array(input_masks)
+    input_segments = np.array(input_segments)
+    pool_embs, all_embs = model.predict([[input_ids], [input_masks], [input_segments]])
+
+
+    def square_rooted(x):
+        return math.sqrt(sum([a * a for a in x]))
+
+
+    def cosine_similarity(x, y):
+        numerator = sum(a * b for a, b in zip(x, y))
+        denominator = square_rooted(x) * square_rooted(y)
+        return numerator / float(denominator)
+
+
+    for one_feature in ast.literal_eval(df['Features'][0]):
+        f_stokens = tokenizer.tokenize(one_feature)
+        feat_stokens = ["[CLS]"] + f_stokens + ["[SEP]"]
+
+        f_input_ids = get_ids(feat_stokens, tokenizer, max_seq_length)
+        f_input_masks = get_masks(feat_stokens, max_seq_length)
+        f_input_segments = get_segments(feat_stokens, max_seq_length)
+
+        f_input_ids = np.array(f_input_ids)
+        f_input_masks = np.array(f_input_masks)
+        f_input_segments = np.array(f_input_segments)
+        f_pool_embs, f_all_embs = model.predict([[f_input_ids], [f_input_masks], [f_input_segments]])
+
+        similarity = cosine_similarity(all_embs[0][0], f_all_embs[0][0])
+        row[str(one_feature)] = similarity
+
+df.to_csv("sorted_reviews.csv",index=False)

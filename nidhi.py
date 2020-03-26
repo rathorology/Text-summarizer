@@ -2,7 +2,6 @@ import ijson
 
 import pandas as pd
 from numpy import nan as Nan
-
 # ##################################################################################################################################
 # filename = "/home/rathorology/PycharmProjects/Text-summarizer/capterra/capterra_products-002.bson"
 # import bson
