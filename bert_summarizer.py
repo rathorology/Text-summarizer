@@ -120,5 +120,5 @@ for index, row in df.iterrows():
 
         similarity = cosine_similarity(all_embs[0][0], f_all_embs[0][0])
         row[str(one_feature)] = similarity
-
+        print(similarity)
 df.to_csv("sorted_reviews.csv",index=False)

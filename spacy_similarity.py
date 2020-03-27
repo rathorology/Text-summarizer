@@ -1,0 +1,31 @@
+import spacy
+
+nlp = spacy.load('en_core_web_lg')
+doc = nlp(
+    u"Great Solution For Team Collaboration & Basic Project Management.I've used Basecamp to manage development projects, marketing programs, product management, company calendars, and basic HR/company policy documentation for several years. I've always found it to be reliable and easy to use. I will continue to use it going forward..Basecamp is incredibly intuitive and easy-to-use. New users can start using the system in a very short period of time. I love the ability to upload files to specific projects or teams and to organize them into folders and update them with new versions. I also really appreciate how Basecamp makes sharing news, messages, and schedules with members of the team. Basecamp is also very affordable, even for small teams..I would like to see some additional project management features added. Specifically, project milestones and Gantt charts. A few of the features are not particularly useful, such as the Gaussian-looking completion chart.")
+doc1 = nlp(u'Compliance Management')
+doc2 = nlp(u'Credit Risk Management')
+doc3 = nlp(u'For Hedge Funds')
+doc4 = nlp(u'Liquidity Analysis')
+doc5 = nlp(u'Loan Portfolio Management')
+doc6 = nlp(u'Market Risk Management')
+doc7 = nlp(u'Operational Risk Management')
+doc8 = nlp(u'Portfolio Management  ')
+doc9 = nlp(u'Portfolio Modeling')
+doc10 = nlp(u'Risk Analytics Benchmarks')
+doc11= nlp(u'Stress Tests')
+doc12 = nlp(u'Value At Risk Calculation')
+
+
+print(doc.similarity(doc1))
+print(doc.similarity(doc2))
+print(doc.similarity(doc3))
+print(doc.similarity(doc4))
+print(doc.similarity(doc5))
+print(doc.similarity(doc6))
+print(doc.similarity(doc7))
+print(doc.similarity(doc8))
+print(doc.similarity(doc9))
+print(doc.similarity(doc10))
+print(doc.similarity(doc11))
+print(doc.similarity(doc12))
