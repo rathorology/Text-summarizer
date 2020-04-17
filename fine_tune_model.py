@@ -1,9 +1,13 @@
-import spacy
+import itertools
+import random
+from gensim.summarization import keywords
+from nltk.corpus import stopwords
+from nltk.tokenize import wordpunct_tokenize
 import pandas as pd
-nlp = spacy.load('en_core_web_lg')
-rev = "I love the powerful, flexible nature of this CRM. It is very intuitive and easy to learn. Very extensive reporting capabilities as well as the ability the add third-party add-ons. It is the most popular solution in the market, and a reasonable price. Their support is also very good, they contact you back very quickly.Can get too detailed sometimes if you don't know what you are doing. Needs a little hand holding at first to get new users started.Keep track of all of our customers and their opportunities. Everything that is discussed or email is tracked. We can track customers/contacts, different locations, products they have purchased, support ticketing and even set marketing reminders"
-list_rev = rev.split(".")
+from nltk.stem import WordNetLemmatizer
 
+df = pd.read_csv("results/elmo_results.csv")
+lemmatizer = WordNetLemmatizer()
 feat_dict = {
     'Sales Force Automation:Contact & Account Management': 'Store and retrieve information associated to customer contacts and accounts.  Track company-wide communication and information about contacts and accounts.',
     'Sales Force Automation:Partner Relationship Mgmt. (PRM)': 'Manage partners by tracking channel partner leads and sales opportunities.   Provide a partner portal to collaborate with channels on sales opportunities and to share product, pricing, quoting, ordering, and training information',
@@ -41,33 +45,75 @@ feat_dict = {
     'Integration:Integration APIs': "Application Programming Interface - Specification for how the application communicates with other software.  API's typically enable integration of data, logic, objects, etc with other software applications.",
     'Integration:Breadth of Partner Applications': 'To what extent are there partner applications readily available for integrating into this product?  Partner applications typically provide complementary, best of breed functionality not offered natively in this product.'}
 
-# print(doc.similarity(doc1))
-# print(doc.similarity(doc2))
-# print(doc.similarity(doc3))
-# print(doc.similarity(doc4))
-# print(doc.similarity(doc5))
-# print(doc.similarity(doc6))
-# print(doc.similarity(doc7))
-# print(doc7.similarity(doc8))
-# print(doc.similarity(doc9))
-# print(doc.similarity(doc10))
-# print(doc.similarity(doc11))
-# print(doc.similarity(doc12))
-output = []
-for texts in list_rev:
-    for i in texts:
-        s = [token.lemma_ for token in nlp(i)]
-        output.append(' '.join(s))
-    print(output)
-for r in list_rev:
+# for rev in df['body']:
+#     for key, val in feat_dict.items():
+#         print(val)
 
-    doc = nlp(r)
-    print("#############################################################################################")
-    print(r)
-    for key, value in feat_dict.items():
-        print(key)
-        f = nlp(value)
-        print(doc.similarity(f))
+from collections import Counter
 
-        print('=========================================================')
-# df.to_csv("analysis1.csv",index=False)
+punctuation = '!"#$%&()*+-/:;<=>?@[\\]^_`{|}~'
+df['new_body'] = df['body'].apply(lambda x: ''.join(ch for ch in x if ch not in set(punctuation)))
+
+# convert text to lowercase
+df['new_body'] = df['new_body'].str.lower()
+
+stop_words = set(stopwords.words('english'))
+char = ['.', ',', '"', "'", '/', '?', '!', ':', ';', '(', ')', '[', ']', '{', '}', '&', '-', 'management', 'mgmt',
+        'user', 'support']
+stop_words.update(char)  # remove it if you need punctuation
+list_of_words = list()
+for doc in df['new_body']:
+    token = wordpunct_tokenize(doc)
+    lam_token = [lemmatizer.lemmatize(i) for i in token]
+    list_of_words.append([i for i in lam_token if i not in stop_words])
+df['body_tokens'] = list_of_words
+
+# most frequent words
+list_of_words = list(itertools.chain(*list_of_words))
+s = " "
+data_set = s.join(list_of_words)
+
+# split() returns list of all the words in the string
+split_it = data_set.split()
+# split_it = [lemmatizer.lemmatize(word) for word in split_it]
+# Pass the split_it list to instance of Counter class.
+Counter = Counter(split_it)
+
+# most_common() produces k frequently encountered
+# input values and their respective counts.
+most_occur = dict(Counter.most_common(100))
+most_occur_100 = [k for k in most_occur.keys()]
+keyword = keywords(s.join(most_occur_100)).split('\n')
+stop_100 = list(set(most_occur_100) - set(keyword))
+print(stop_100)
+
+feat_dict_updated = dict()
+for key, val in feat_dict.items():
+    cat = [lemmatizer.lemmatize(i.lower()) for i in wordpunct_tokenize(key.split(":")[1]) if
+           i.lower() not in stop_words]
+    w = [i.lower() for i in wordpunct_tokenize(val) if i.lower() not in stop_words]
+    w = list(set([lemmatizer.lemmatize(word) for word in w]))
+    w = [i for i in w if i not in stop_100]
+    feat_dict_updated[key] = (cat, w)
+
+for index, row in df.iterrows():
+    r = row['body_tokens']
+    for key, val in feat_dict_updated.items():
+        add_score = 0
+        first_key = val[0]
+        second_key = val[1]
+        for item in first_key:
+            if r.count(item) != 0:
+                add_score += 0.20
+        for item in second_key:
+            if r.count(item) != 0:
+                add_score += 0.10
+
+        if df.at[index, key] + add_score > 0.96:
+            df.at[index, key] = round(random.uniform(0.95, 0.96) * 100, 2)
+        else:
+            df.at[index, key] = round((df.at[index, key] + add_score) * 100, 2)
+
+# df = df.drop(['body_tokens', 'new_body'], axis=1)
+# df.to_csv("results/tuned_elmo.csv", index=False)
+######################################################################################################################

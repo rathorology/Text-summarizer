@@ -79,28 +79,35 @@ def sim(a, b):
 
 
 def elmo_vectors(x):
-    ## with splitting by (.)
-    # concatinated_embadings = list()
-    # for one_review in x.tolist():
-    #     splitted_review = (one_review.split("."))
-    #     test_input = tf.constant(splitted_review, dtype=tf.string)
-    #     embeddings = elmo.signatures['default'](test_input)["elmo"]
-    #     concatinated_embadings.append(np.concatenate(embeddings,axis=0))
+    # with splitting by (.)
+    concatinated_embadings = list()
+    for one_review in x.tolist():
+        splitted_review = (one_review.split("."))
+        test_input = tf.constant(splitted_review, dtype=tf.string)
+        embeddings = elmo.signatures['default'](test_input)["elmo"]
+
+        # average out all sentance to one
+        embeddings = tf.math.reduce_mean(embeddings, axis=(0, 1))
+
+        concatinated_embadings.append(embeddings)
+    concatinated_embadings = tf.stack(concatinated_embadings)
     global i
     i += 1
     print("Iteration count = ", i, "Time =", round(time.time(), 2))
-    # without splitting
-    test_input = tf.constant(x.tolist(), dtype=tf.string)
-    embeddings = elmo.signatures['default'](test_input)["elmo"]
+    # # without splitting
+    # test_input = tf.constant(x.tolist(), dtype=tf.string)
+    # embeddings = elmo.signatures['default'](test_input)["elmo"]
     print("=================================================")
     with tf.compat.v1.Session() as sess:
         sess.run(tf.compat.v1.global_variables_initializer())
         sess.run(tf.compat.v1.tables_initializer())
         # return average of ELMo features
-        return sess.run(tf.math.reduce_mean(tf.constant(embeddings), 1))
+        # return sess.run(tf.math.reduce_mean(tf.constant(concatinated_embadings), 1))
+        return sess.run(tf.constant(concatinated_embadings))
 
 
-df_batch = [df[i:i + 50] for i in range(0, df.shape[0], 50)]
+df = df[0:20]
+df_batch = [df[i:i + 10] for i in range(0, df.shape[0], 10)]
 i = 0
 # elmo_train = list()
 # for x in df_batch:
@@ -116,30 +123,4 @@ for key, value in feature_vectors.items():
     similarity = cosine_similarity(review_vector_frame['review_vector'].tolist(), v).mean(axis=1)
     review_vector_frame[key] = similarity
 review_vector_frame = review_vector_frame.drop(['review_vector'], axis=1)
-review_vector_frame.to_csv("results.csv", index=False)
-
-# =====================================================================================================================
-
-
-# import pandas as pd
-# from numpy import dot
-# from numpy.linalg import norm
-# import numpy as np
-# import ast
-# import json
-#
-# def sim(a, b):
-#     cos_sim = dot(a, b) / (norm(a) * norm(b))
-#     return cos_sim
-#
-#
-# df_rew = pd.read_csv("/home/rathorology/PycharmProjects/Text-summarizer/review_vector_frame.csv")
-# # df_vec = pd.read_csv("/home/rathorology/PycharmProjects/Text-summarizer/feature_vectors_frame.csv")
-# # v1 = df_rew['review_vector']
-# # v2 = df_vec['Sales Force Automation:Contact & Account Management']
-# with open('vector.json') as f:
-#   feature_vector = json.load(f)
-# for key,value in feature_vector.items():
-#     v = [ele for ele in value for i in range(df_rew.shape[0])]
-#     df_rew[key] = v
-# print(df_rew)
+review_vector_frame.to_csv("demo.csv", index=False)

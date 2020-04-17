@@ -2,14 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="caffbe3f-3bc6-425f-adc8-7a2b47e1010f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Sentance_transformer_on_reviews.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/elmo_similarity.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ELMO_all.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elmo_backup.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/elmo_parallel.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fine_tune_model.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finanical_risk_management.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nidhi.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample_reviews_summary.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/elmo_similarity.py" beforeDir="false" afterPath="$PROJECT_DIR$/elmo_similarity.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spacy_similarity.py" beforeDir="false" afterPath="$PROJECT_DIR$/spacy_similarity.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/text_extraction.py" beforeDir="false" afterPath="$PROJECT_DIR$/text_extraction.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,17 +29,16 @@
   <component name="ProjectId" id="1WwbERd9LOSBlnZQzlFwGmXht6k" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../LanguageDetection-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Language-Translation" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.spacy_similarity">
-    <configuration name="Sentance_transformer_on_reviews" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.elmo_parallel">
+    <configuration name="ELMO_all" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Text-summarizer" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -51,7 +50,28 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Sentance_transformer_on_reviews.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ELMO_all.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="elmo_parallel" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Text-summarizer" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/elmo_parallel.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -81,7 +101,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="nidhi" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="elmo_test_max" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Text-summarizer" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -93,7 +113,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/nidhi.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/elmo_test_max.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -102,7 +122,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="spacy_similarity" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="fine_tune_model" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Text-summarizer" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -114,28 +134,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/spacy_similarity.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Text-summarizer" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/fine_tune_model.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -146,16 +145,13 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.spacy_similarity" />
+        <item itemvalue="Python.elmo_parallel" />
+        <item itemvalue="Python.ELMO_all" />
         <item itemvalue="Python.elmo_similarity" />
-        <item itemvalue="Python.Sentance_transformer_on_reviews" />
-        <item itemvalue="Python.test" />
-        <item itemvalue="Python.nidhi" />
+        <item itemvalue="Python.elmo_test_max" />
+        <item itemvalue="Python.fine_tune_model" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="showServicesTree" value="false" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -171,82 +167,91 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+    <state x="560" y="27" width="789" height="1053" key="#ELMO_all" timestamp="1586987808840">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="560" y="27" width="789" height="1053" key="#ELMO_all/0.27.1920.1053@0.27.1920.1053" timestamp="1586987808840" />
     <state x="693" y="286" width="524" height="551" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1586334187839">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="693" y="286" width="524" height="551" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1586334187839" />
-    <state x="256" y="27" width="1572" height="1053" key="#xdebugger.evaluate" timestamp="1586324570662">
+    <state x="271" y="27" width="1572" height="1053" key="#xdebugger.evaluate" timestamp="1587120685739">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="350" y="484" width="1319" height="596" key="#xdebugger.evaluate/0.27.1920.1053/1920.0.1080.2160@0.27.1920.1053" timestamp="1585945286610" />
-    <state x="256" y="27" width="1572" height="1053" key="#xdebugger.evaluate/0.27.1920.1053@0.27.1920.1053" timestamp="1586324570662" />
+    <state x="355" y="484" width="1319" height="596" key="#xdebugger.evaluate/0.27.1920.1053/1920.0.1080.2160@0.27.1920.1053" timestamp="1586697673269" />
+    <state x="271" y="27" width="1572" height="1053" key="#xdebugger.evaluate/0.27.1920.1053@0.27.1920.1053" timestamp="1587120685739" />
     <state x="260" y="740" key="#xdebugger.evaluate/0.27.3000.2133@0.27.3000.2133" timestamp="1584548850139" />
     <state width="1104" height="867" key="DebuggerActiveHint" timestamp="1586087984362">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state width="1104" height="867" key="DebuggerActiveHint/0.27.1920.1053@0.27.1920.1053" timestamp="1586087984362" />
-    <state x="708" y="305" key="FileChooserDialogImpl" timestamp="1585681910796">
+    <state x="708" y="305" key="FileChooserDialogImpl" timestamp="1586336799375">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="708" y="305" key="FileChooserDialogImpl/0.27.1920.1053/1920.0.1080.2160@0.27.1920.1053" timestamp="1585681910796" />
-    <state width="1881" height="293" key="GridCell.Tab.0.bottom" timestamp="1586334129440">
+    <state x="708" y="305" key="FileChooserDialogImpl/0.27.1920.1053@0.27.1920.1053" timestamp="1586336799375" />
+    <state width="1881" height="358" key="GridCell.Tab.0.bottom" timestamp="1587136906496">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1880" height="483" key="GridCell.Tab.0.bottom/0.27.1920.1053/1920.0.1080.2160@0.27.1920.1053" timestamp="1585945081610" />
-    <state width="1881" height="293" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1586334129440" />
-    <state width="1881" height="420" key="GridCell.Tab.0.bottom/0.27.3000.2133@0.27.3000.2133" timestamp="1584548865334" />
-    <state width="1881" height="293" key="GridCell.Tab.0.center" timestamp="1586334129440">
+    <state width="1880" height="117" key="GridCell.Tab.0.bottom/0.27.1920.1053/1920.0.1080.2160@0.27.1920.1053" timestamp="1586698170658" />
+    <state width="1881" height="358" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1587136906496" />
+    <state width="1881" height="236" key="GridCell.Tab.0.bottom/0.27.3000.2133@0.27.3000.2133" timestamp="1587017421176" />
+    <state width="1881" height="358" key="GridCell.Tab.0.center" timestamp="1587136906496">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1880" height="483" key="GridCell.Tab.0.center/0.27.1920.1053/1920.0.1080.2160@0.27.1920.1053" timestamp="1585945081610" />
-    <state width="1881" height="293" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1586334129440" />
-    <state width="1881" height="420" key="GridCell.Tab.0.center/0.27.3000.2133@0.27.3000.2133" timestamp="1584548865334" />
-    <state width="1881" height="293" key="GridCell.Tab.0.left" timestamp="1586334129439">
+    <state width="1880" height="117" key="GridCell.Tab.0.center/0.27.1920.1053/1920.0.1080.2160@0.27.1920.1053" timestamp="1586698170658" />
+    <state width="1881" height="358" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1587136906496" />
+    <state width="1881" height="236" key="GridCell.Tab.0.center/0.27.3000.2133@0.27.3000.2133" timestamp="1587017421176" />
+    <state width="1881" height="358" key="GridCell.Tab.0.left" timestamp="1587136906496">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1880" height="483" key="GridCell.Tab.0.left/0.27.1920.1053/1920.0.1080.2160@0.27.1920.1053" timestamp="1585945081610" />
-    <state width="1881" height="293" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1586334129439" />
-    <state width="1881" height="420" key="GridCell.Tab.0.left/0.27.3000.2133@0.27.3000.2133" timestamp="1584548865333" />
-    <state width="1881" height="293" key="GridCell.Tab.0.right" timestamp="1586334129440">
+    <state width="1880" height="117" key="GridCell.Tab.0.left/0.27.1920.1053/1920.0.1080.2160@0.27.1920.1053" timestamp="1586698170658" />
+    <state width="1881" height="358" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1587136906496" />
+    <state width="1881" height="236" key="GridCell.Tab.0.left/0.27.3000.2133@0.27.3000.2133" timestamp="1587017421176" />
+    <state width="1881" height="358" key="GridCell.Tab.0.right" timestamp="1587136906496">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1880" height="483" key="GridCell.Tab.0.right/0.27.1920.1053/1920.0.1080.2160@0.27.1920.1053" timestamp="1585945081610" />
-    <state width="1881" height="293" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1586334129440" />
-    <state width="1881" height="420" key="GridCell.Tab.0.right/0.27.3000.2133@0.27.3000.2133" timestamp="1584548865334" />
-    <state width="1881" height="420" key="GridCell.Tab.1.bottom" timestamp="1586324574964">
+    <state width="1880" height="117" key="GridCell.Tab.0.right/0.27.1920.1053/1920.0.1080.2160@0.27.1920.1053" timestamp="1586698170658" />
+    <state width="1881" height="358" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1587136906496" />
+    <state width="1881" height="236" key="GridCell.Tab.0.right/0.27.3000.2133@0.27.3000.2133" timestamp="1587017421176" />
+    <state width="1881" height="358" key="GridCell.Tab.1.bottom" timestamp="1587136906497">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1880" height="288" key="GridCell.Tab.1.bottom/0.27.1920.1053/1920.0.1080.2160@0.27.1920.1053" timestamp="1585945151489" />
-    <state width="1881" height="420" key="GridCell.Tab.1.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1586324574964" />
+    <state width="1880" height="220" key="GridCell.Tab.1.bottom/0.27.1920.1053/1920.0.1080.2160@0.27.1920.1053" timestamp="1586697675323" />
+    <state width="1881" height="358" key="GridCell.Tab.1.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1587136906497" />
     <state width="1881" height="420" key="GridCell.Tab.1.bottom/0.27.3000.2133@0.27.3000.2133" timestamp="1584548865334" />
-    <state width="1881" height="420" key="GridCell.Tab.1.center" timestamp="1586324574964">
+    <state width="1881" height="358" key="GridCell.Tab.1.center" timestamp="1587136906497">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1880" height="288" key="GridCell.Tab.1.center/0.27.1920.1053/1920.0.1080.2160@0.27.1920.1053" timestamp="1585945151489" />
-    <state width="1881" height="420" key="GridCell.Tab.1.center/0.27.1920.1053@0.27.1920.1053" timestamp="1586324574964" />
+    <state width="1880" height="220" key="GridCell.Tab.1.center/0.27.1920.1053/1920.0.1080.2160@0.27.1920.1053" timestamp="1586697675323" />
+    <state width="1881" height="358" key="GridCell.Tab.1.center/0.27.1920.1053@0.27.1920.1053" timestamp="1587136906497" />
     <state width="1881" height="420" key="GridCell.Tab.1.center/0.27.3000.2133@0.27.3000.2133" timestamp="1584548865334" />
-    <state width="1881" height="420" key="GridCell.Tab.1.left" timestamp="1586324574964">
+    <state width="1881" height="358" key="GridCell.Tab.1.left" timestamp="1587136906497">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1880" height="288" key="GridCell.Tab.1.left/0.27.1920.1053/1920.0.1080.2160@0.27.1920.1053" timestamp="1585945151489" />
-    <state width="1881" height="420" key="GridCell.Tab.1.left/0.27.1920.1053@0.27.1920.1053" timestamp="1586324574964" />
+    <state width="1880" height="220" key="GridCell.Tab.1.left/0.27.1920.1053/1920.0.1080.2160@0.27.1920.1053" timestamp="1586697675323" />
+    <state width="1881" height="358" key="GridCell.Tab.1.left/0.27.1920.1053@0.27.1920.1053" timestamp="1587136906497" />
     <state width="1881" height="420" key="GridCell.Tab.1.left/0.27.3000.2133@0.27.3000.2133" timestamp="1584548865334" />
-    <state width="1881" height="420" key="GridCell.Tab.1.right" timestamp="1586324574964">
+    <state width="1881" height="358" key="GridCell.Tab.1.right" timestamp="1587136906497">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1880" height="288" key="GridCell.Tab.1.right/0.27.1920.1053/1920.0.1080.2160@0.27.1920.1053" timestamp="1585945151489" />
-    <state width="1881" height="420" key="GridCell.Tab.1.right/0.27.1920.1053@0.27.1920.1053" timestamp="1586324574964" />
+    <state width="1880" height="220" key="GridCell.Tab.1.right/0.27.1920.1053/1920.0.1080.2160@0.27.1920.1053" timestamp="1586697675323" />
+    <state width="1881" height="358" key="GridCell.Tab.1.right/0.27.1920.1053@0.27.1920.1053" timestamp="1587136906497" />
     <state width="1881" height="420" key="GridCell.Tab.1.right/0.27.3000.2133@0.27.3000.2133" timestamp="1584548865334" />
-    <state x="426" y="182" width="1057" height="760" key="SettingsEditor" timestamp="1585933239810">
+    <state x="426" y="182" width="1057" height="760" key="SettingsEditor" timestamp="1587029087876">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="426" y="182" key="SettingsEditor/0.27.1920.1053/1920.0.1080.2160@0.27.1920.1053" timestamp="1585933239810" />
-    <state x="426" y="182" width="1057" height="760" key="SettingsEditor/0.27.1920.1053@0.27.1920.1053" timestamp="1585030554051" />
-    <state width="960" height="526" key="XDebugger.FullValuePopup" timestamp="1586324408825">
+    <state x="426" y="182" width="1057" height="760" key="SettingsEditor/0.27.1920.1053@0.27.1920.1053" timestamp="1587029087876" />
+    <state width="960" height="526" key="XDebugger.FullValuePopup" timestamp="1587128568840">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="960" height="526" key="XDebugger.FullValuePopup/0.27.1920.1053/1920.0.1080.2160@0.27.1920.1053" timestamp="1585945178643" />
-    <state width="960" height="526" key="XDebugger.FullValuePopup/0.27.1920.1053@0.27.1920.1053" timestamp="1586324408825" />
+    <state width="960" height="526" key="XDebugger.FullValuePopup/0.27.1920.1053/1920.0.1080.2160@0.27.1920.1053" timestamp="1586697084120" />
+    <state width="960" height="526" key="XDebugger.FullValuePopup/0.27.1920.1053@0.27.1920.1053" timestamp="1587128568840" />
+    <state x="445" y="236" width="1020" height="652" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1586435943838">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="445" y="236" width="1020" height="652" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.27.1920.1053@0.27.1920.1053" timestamp="1586435943838" />
     <state x="674" y="394" width="571" height="352" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1580751431966">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
@@ -261,34 +266,9 @@
           <option name="timeStamp" value="70" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/spacy_similarity.py</url>
-          <line>3</line>
-          <option name="timeStamp" value="72" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/sentance_transformers.py</url>
           <line>32</line>
           <option name="timeStamp" value="75" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/spacy_similarity.py</url>
-          <line>2</line>
-          <option name="timeStamp" value="142" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/elmo_similarity.py</url>
-          <line>144</line>
-          <option name="timeStamp" value="199" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/elmo_similarity.py</url>
-          <line>143</line>
-          <option name="timeStamp" value="205" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/elmo_similarity.py</url>
-          <line>141</line>
-          <option name="timeStamp" value="213" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Sentance_transformer_on_reviews.py</url>
@@ -296,11 +276,51 @@
           <option name="timeStamp" value="219" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/spacy_similarity.py</url>
+          <line>61</line>
+          <option name="timeStamp" value="222" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/spacy_similarity.py</url>
+          <line>71</line>
+          <option name="timeStamp" value="223" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/spacy_similarity.py</url>
+          <line>56</line>
+          <option name="timeStamp" value="225" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/spacy_similarity.py</url>
+          <line>60</line>
+          <option name="timeStamp" value="226" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/text_extraction.py</url>
+          <line>25</line>
+          <option name="timeStamp" value="287" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/elmo_similarity.py</url>
-          <line>57</line>
-          <option name="timeStamp" value="221" />
+          <line>89</line>
+          <option name="timeStamp" value="307" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/elmo_parallel.py</url>
+          <line>32</line>
+          <option name="timeStamp" value="324" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/elmo_parallel.py</url>
+          <line>18</line>
+          <option name="timeStamp" value="331" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="3 = {dict: 2} {'category': 'Reporting &amp; Analytics', 'feature_list': [{'title': 'Reporting', 'description': 'Enables reporting of all data contained within the system.  Typically contains standard reports as well as the ability to create ad-hoc reports.', 'percentage': '84%', 'based_on_reviews': '6200'}, {'title': 'Dashboards', 'description': 'An easy to read, often single page, real-time user interface, showing a graphical presentation of the current status and historical trends of an organization’s Key Performance Indicators (KPIs) to enable instantaneous and informed decisions to be made at a glance', 'percentage': '84%', 'based_on_reviews': '6355'}, {'title': 'Forecasting', 'description': &quot;Enables projection of sales revenue, based on historical sales data, analysis of market surveys and trends, and salespersons' estimates.&quot;, 'percentage': '81%', 'based_on_reviews': '4982'}]}… View" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
